@@ -1,26 +1,33 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Header from './components/Header';
+import Education from './components/Education';
+import Experience from './components/Experience';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      name: "",
+      email: "",
+      number: "",
+      school: "",
+      gradDate: "",
+      experience: [],
+      showForm: false
+    }
+  }
+
+  render() {
+    return (
+      <div className="grid-container">
+        <div className="cv-container">
+          <Header  />
+          <Education />
+          <Experience />
+        </div>
+      </div>
+    );
+  }
 }
 
 export default App;
